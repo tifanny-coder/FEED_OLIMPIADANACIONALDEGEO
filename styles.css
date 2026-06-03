@@ -283,12 +283,27 @@ h1 {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow);
+  position: relative;
 }
 
 .book-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.book-card figcaption {
+  position: absolute;
+  right: 18px;
+  bottom: 16px;
+  z-index: 2;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--paper);
+  background: #c9222d;
+  font-size: 0.82rem;
+  font-weight: 900;
+  box-shadow: 0 10px 22px rgba(201, 34, 45, 0.22);
 }
 
 .book-card img[src^="assets/"] {
@@ -307,11 +322,41 @@ h1 {
 .side-book {
   position: absolute;
   right: 0;
-  bottom: 10px;
+  bottom: 82px;
   width: min(360px, 74%);
   aspect-ratio: 16 / 10;
   border-radius: 18px;
   transform: rotate(4deg);
+}
+
+.book-note {
+  position: absolute;
+  right: 18px;
+  bottom: 4px;
+  z-index: 3;
+  display: grid;
+  gap: 4px;
+  min-width: min(340px, 82%);
+  padding: 14px 18px;
+  border-radius: 999px;
+  color: #8e1a22;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid rgba(201, 34, 45, 0.32);
+  box-shadow: 0 18px 38px rgba(8, 38, 83, 0.14);
+  text-align: center;
+}
+
+.book-note span {
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.book-note strong {
+  color: #c9222d;
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 1.18rem;
+  line-height: 1.1;
 }
 
 .intro-band {
@@ -598,7 +643,7 @@ h1 {
   }
 
   .book-showcase {
-    min-height: 360px;
+    min-height: 430px;
     margin-left: 0;
   }
 
@@ -608,6 +653,14 @@ h1 {
 
   .side-book {
     width: 62%;
+    bottom: 84px;
+  }
+
+  .book-note {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    min-width: 0;
   }
 
   .resource-grid {
@@ -673,7 +726,15 @@ h1 {
   }
 
   .book-showcase {
-    min-height: 300px;
+    min-height: 380px;
+  }
+
+  .book-note {
+    border-radius: 18px;
+  }
+
+  .book-note strong {
+    font-size: 1rem;
   }
 
   .resource-grid,
